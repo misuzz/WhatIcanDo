@@ -92,3 +92,46 @@ body {
 	top: 80%;
 	background-color: #5ED5DD;
 }
+
+/******************************************/
+/*              top message               */
+/******************************************/
+
+#TopMessageTitle{
+	text-align: center;
+	font-size: 48px;
+	margin-bottom: 80px;
+}
+
+#TopMessageContents{
+	display: flex;
+	justify-content: center;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity .3s, transform .3s;
+}
+
+#TopMessageContents.appear{
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+#TopMessageImg img{
+	width: 300px;
+	height: auto;
+	margin: 24px;
+}
+
+#TopMessageSentences{
+	margin: 0 40px;
+}
+
+#TopMessageSubTitle{
+	font-size: 32px;
+	border-bottom: 2px solid grey;
+}
+
+#TopMessageDetailed{
+	line-height: 32px;
+}

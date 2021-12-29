@@ -19,3 +19,27 @@
 		setInterval(changeImgs, 2000);
 	}
 }
+
+//////////////////////////////////////////////
+//                  監視                     //
+///////////////////////////////////////////////
+
+const target = document.getElementById('TopMessageContents');
+
+function callback(entries){
+	console.log(entries[0]);
+
+	if (!entries[0].isIntersecting){
+		return;
+	}
+		entries[0].target.classList.add('appear');
+
+}
+
+const option = {
+	threshold:0.3
+}
+
+const observer = new IntersectionObserver(callback, option);
+
+observer.observe(target);
