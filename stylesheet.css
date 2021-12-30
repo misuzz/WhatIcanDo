@@ -77,7 +77,7 @@ body {
 	list-style: none;
 }
 
-#newsForEach ul li{
+#newsForEach ul li {
 	line-height: 50px;
 	border-bottom: 3px dotted black;
 }
@@ -94,11 +94,12 @@ body {
 	animation: menu 3s;
 }
 
-@keyframes menu{
-	from{
+@keyframes menu {
+	from {
 		opacity: 0;
 	}
-	to{
+
+	to {
 		opacity: 1;
 	}
 }
@@ -107,41 +108,114 @@ body {
 /*              top message               */
 /******************************************/
 
-#TopMessageTitle{
+#TopMessageTitle {
 	text-align: center;
 	font-size: 48px;
 	margin-bottom: 80px;
 }
 
-#TopMessageContents{
+#TopMessageContents {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 	opacity: 0;
 	transform: translateY(50px);
 	transition: opacity 1s, transform 1s;
 }
 
-#TopMessageContents.appear{
+#TopMessageContents.appear {
 	opacity: 1;
-	transform: translateY(0);
+	transform: none;
 }
 
 
-#TopMessageImg img{
+#TopMessageImg img {
 	width: 300px;
 	height: auto;
 	margin: 24px;
 }
 
-#TopMessageSentences{
+#TopMessageSentences {
 	margin: 0 40px;
 }
 
-#TopMessageSubTitle{
+#TopMessageSubTitle {
 	font-size: 32px;
 	border-bottom: 2px solid grey;
 }
 
-#TopMessageDetailed{
+#TopMessageDetailed {
 	line-height: 32px;
+}
+
+/******************************************/
+/*              Parallels                 */
+/******************************************/
+
+#ParallelTitle {
+	text-align: center;
+	font-size: 48px;
+	margin-top: 320px;
+}
+
+#ParallelExplanation p {
+	text-align: center;
+	margin-top: 56px;
+
+}
+
+#ParallelContents {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 104px;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1s, transform 1s;
+}
+#ParallelContents.appear{
+	opacity: 1;
+	transform: none;
+}
+
+#ParallelContents .Parallel {
+	margin: 0 10px;
+}
+
+#ParallelContents .Parallel img {
+	border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	display: block;
+	margin: 0 auto;
+}
+
+
+.Parallel h3 {
+	text-align: center;
+	margin: 50px 0;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1s, transform 1s;
+}
+
+#ParallelContents.appear .Parallel h3{
+	opacity: 1;
+	transform: none;
+	transition-delay: .6s;
+}
+
+
+#ParallelContents p {
+	width: 400px;
+	background-color: rgba(185, 255, 230, 0.3);
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1s, transform 1s;
+}
+
+#ParallelContents.appear .Parallel p{
+	transform: none;
+	opacity: 1;
+	transition-delay: .8s;
 }

@@ -26,20 +26,44 @@
 
 const target = document.getElementById('TopMessageContents');
 
-function callback(entries){
+function callback(entries) {
 	console.log(entries[0]);
 
-	if (!entries[0].isIntersecting){
+	if (!entries[0].isIntersecting) {
 		return;
 	}
-		entries[0].target.classList.add('appear');
+	entries[0].target.classList.add('appear');
 
 }
 
 const option = {
-	threshold:0.2
+	threshold: 0.2
 }
 
 const observer = new IntersectionObserver(callback, option);
 
 observer.observe(target);
+
+///////////////////////////////////////////////////////
+
+const ParallelTarget = document.getElementById('ParallelContents');
+
+function ParallelCallback(entries) {
+	console.log(entries[0]);
+
+	if (!entries[0].isIntersecting) {
+		return;
+	}
+	entries[0].target.classList.add('appear');
+
+}
+
+const ParallelOption = {
+	threshold: 0.2
+}
+
+const ParallelObserver = new IntersectionObserver(ParallelCallback, ParallelOption);
+
+ParallelObserver.observe(ParallelTarget);
+
+////////////////////////////////////////////////////
