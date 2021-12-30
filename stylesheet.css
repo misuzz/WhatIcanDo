@@ -3,6 +3,7 @@ body {
 	padding: 0;
 	font-family: 'Shippori Mincho', serif;
 }
+
 /*************************************/
 /*               header              */
 /*************************************/
@@ -12,7 +13,7 @@ body {
 	padding: 0 16px;
 }
 
-#HeaderLogo{
+#HeaderLogo {
 	display: inline-block;
 	font-family: 'Pushster', cursive;
 	font-size: 60px;
@@ -23,54 +24,133 @@ body {
 	cursor: pointer;
 }
 
-#HeaderLogo:hover{
+#HeaderLogo:hover {
 	opacity: .6;
 }
 
-#HeaderMenu{
+#HeaderMenu {
 	margin-left: auto;
 }
 
-#HeaderMenu ul{
+#HeaderMenu ul {
 	display: flex;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-#HeaderMenu ul li{
+#HeaderMenu ul li {
 	line-height: 80px;
 	margin: 0 56px;
 	cursor: pointer;
 }
 
-#HeaderMenu ul li:hover{
+#HeaderMenu ul li:hover {
 	color: #5ED5DD;
 }
 
-#sp-HeaderMenu{
+#sp-HeaderMenu {
 	display: none;
 }
 
-@media(max-width:600px){
+@media(max-width:600px) {
 
-	#header{
-		outline: 3px solid red;
-	}
-
-	#HeaderLogo{
+	#HeaderLogo {
 		font-size: 48px;
 	}
 
-	#sp-HeaderMenu{
+	#sp-HeaderMenu {
 		display: block;
 		margin-left: auto;
 		line-height: 96px;
 	}
-	#HeaderMenu{
+
+	#HeaderMenu {
 		display: none;
 	}
 }
+
+/***************************************/
+/*             modal-window            */
+/***************************************/
+
+#modalWindow {
+	display: none;
+	z-index: 10;
+}
+
+#modalWindow.show {
+	display: block;
+}
+
+#modalWindowMask {
+	background-color: rgba(128, 128, 128, 0.7);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+#modalWindowContents {
+	transform: translateY(-500px);
+	opacity: 0;
+	transition: transform .3s, opacity .3s;
+
+}
+#modalWindow.show #modalWindowContents {
+	position: absolute;
+	background-color: white;
+	border-radius: 10px;
+	width: 50%;
+	height: 40%;
+	top: 10%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	transform: none;
+	opacity: 1;
+}
+
+#modalWindowContentsTitle {
+	font-size: 32px;
+	text-align: center;
+	margin: 32px auto;
+}
+
+#modalWindowContentsDetail {
+	font-size: 16px;
+	line-height: 32px;
+	text-align: center;
+}
+
+#modalWindowContentsCloseButton {
+	font-size: 16px;
+	width: 160px;
+	border: 1px solid black;
+	border-radius: 4px;
+	margin: 16px auto;
+	text-align: center;
+	padding: 8px;
+	cursor: pointer;
+}
+
+#modalWindowContentsCloseButton:hover {
+	background-color: rgba(128, 128, 128, 0.2);
+}
+
+
+#modalWindowContents>.material-icons {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	cursor: pointer;
+}
+
+#modalWindowContents >.material-icons:hover {
+	opacity: .5;
+}
+
 
 /***************************************/
 /*                main                 */
@@ -93,7 +173,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-size: 72px;
-	text-shadow: 1px 0 10px white;
+	text-shadow: 8px 0 8px white;
 }
 
 #mainTitle .subtitle {
@@ -126,32 +206,29 @@ body {
 	}
 }
 
-@media(max-width:600px){
+@media(max-width:600px) {
 
-	#main{
-	}
-
-	#mainTop{
+	#mainTop {
 		height: 320px;
 		padding: 0;
 		margin: 0;
 	}
 
-	#BigImg{
+	#BigImg {
 		height: 320px;
 		animation: none;
 	}
 
-	#mainTitle{
-		bottom: -60px;
+	#mainTitle {
+		bottom: -50px;
 		left: 10px;
 	}
 
-	#mainTitle .title{
+	#mainTitle .title {
 		font-size: 32px;
 	}
 
-	#mainTitle .subtitle{
+	#mainTitle .subtitle {
 		font-size: 16px;
 	}
 
@@ -183,29 +260,32 @@ body {
 
 #newsForEach ul li {
 	line-height: 50px;
+	width: 150%;
+	text-align: center;
 	border-bottom: 3px dotted black;
 }
 
 
-@media(max-width:600px){
-	#news{
+@media(max-width:600px) {
+	#news {
 		margin: 160px auto;
 		display: block;
 	}
 
-	#newsTitle{
+	#newsTitle {
 		margin: 0px auto;
 		line-height: none;
 		font-size: 32px;
 	}
 
-	#newsForEach ul{
+	#newsForEach ul {
 		text-align: center;
 		padding: 16px 32px;
 	}
 
-	#newsForEach ul li{
+	#newsForEach ul li {
 		margin: 0 auto;
+		width: 100%;
 	}
 }
 
@@ -233,8 +313,8 @@ body {
 	}
 }
 
-@media(max-width:600px){
-	#FixedMenu{
+@media(max-width:600px) {
+	#FixedMenu {
 		display: none;
 	}
 }
@@ -283,8 +363,8 @@ body {
 	line-height: 32px;
 }
 
-@media(max-width:600px){
-	#TopMessageTitle{
+@media(max-width:600px) {
+	#TopMessageTitle {
 		margin: 240px auto 0 auto;
 		font-size: 32px;
 	}
@@ -297,13 +377,12 @@ body {
 #ParallelTitle {
 	text-align: center;
 	font-size: 48px;
-	margin-top: 320px;
+	margin-top: 160px;
 }
 
 #ParallelExplanation p {
 	text-align: center;
 	margin-top: 56px;
-
 }
 
 #ParallelContents {
@@ -315,7 +394,8 @@ body {
 	transform: translateY(50px);
 	transition: opacity 1s, transform 1s;
 }
-#ParallelContents.appear{
+
+#ParallelContents.appear {
 	opacity: 1;
 	transform: none;
 }
@@ -341,7 +421,7 @@ body {
 	transition: opacity 1s, transform 1s;
 }
 
-#ParallelContents.appear .Parallel h3{
+#ParallelContents.appear .Parallel h3 {
 	opacity: 1;
 	transform: none;
 	transition-delay: .6s;
@@ -356,26 +436,50 @@ body {
 	transition: opacity 1s, transform 1s;
 }
 
-#ParallelContents.appear .Parallel p{
+#ParallelContents.appear .Parallel p {
 	transform: none;
 	opacity: 1;
 	transition-delay: .8s;
 }
 
-@media(max-width:600px){
-	#Parallels{
+@media(max-width:600px) {
+	#Parallels {
 		margin: 0 16px;
 	}
-	#ParallelTitle{
+
+	#ParallelTitle {
 		font-size: 32px;
+		margin-top: 104px;
 	}
 
-	#ParallelContents h3{
+	#ParallelContents h3 {
 		margin: 32px auto;
 	}
 
-	#ParallelContents p{
+	#ParallelContents p {
 		width: 100%;
 		margin-bottom: 40px;
 	}
+}
+
+
+/******************************************/
+/*                 Footer                 */
+/******************************************/
+
+#footer {
+	height: 160px;
+	margin-top: 40px;
+	background-color: rgba(185, 255, 230, 0.53);
+	padding: 16px 32px;
+}
+
+#footer a {
+	text-decoration: none;
+	line-height: 48px;
+	color: black;
+}
+
+#footer a:hover {
+	color: rgba(0, 0, 0, 0.5);
 }

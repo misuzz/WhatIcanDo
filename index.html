@@ -22,15 +22,32 @@
 		<div id="HeaderLogo">WhatIcanDo</div>
 		<div id="HeaderMenu">
 			<ul>
-				<li>menu</li>
-				<li>menu</li>
-				<li>menu</li>
-				<li>menu</li>
+				<li id="modalWindowOpen">Modal-window</li>
+				<li>Accordion-menu</li>
+				<li>Tab-menu</li>
+				<li>Contact</li>
 			</ul>
 		</div>
 		<div id="sp-HeaderMenu">
 			<span class="material-icons">menu</span>
 		</div>
+
+		<div id="modalWindow">
+			<div id="modalWindowMask" class="close"></div>
+			<div id="modalWindowContents">
+				<span class="material-icons close">close</span>
+				<div id="modalWindowContentsTitle">モーダルウィンドウ作れます</div>
+				<div id="modalWindowContentsDetail">
+					<p>こんな機能も作れます。</p>
+					<p>それに<br>
+						【閉じるボタン、×ボタン、灰色の部分】<br>
+					どこ押しても閉じられます。</p>
+				</div>
+				<div id="modalWindowContentsCloseButton" class="close">閉じる
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<div id="main">
@@ -111,7 +128,8 @@
 	</div>
 
 	<div id="footer">
-
+		<div id="FooterAbout"><a href="#TopMessage">このサイトについて（内部リンク作れます）</a></div>
+	<div id="FooterContact"><a href='#'>お問い合わせ</a></div>
 	</div>
 
 </body>

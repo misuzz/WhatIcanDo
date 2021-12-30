@@ -21,6 +21,24 @@
 }
 
 //////////////////////////////////////////////
+//               modal window               //
+//////////////////////////////////////////////
+
+const modalWindowOpen = document.getElementById('modalWindowOpen');
+const modalWindow = document.getElementById('modalWindow');
+const closes = document.querySelectorAll('.close');
+
+modalWindowOpen.addEventListener('click', () => {
+	modalWindow.classList.add('show');
+})
+
+closes.forEach(close => {
+	close.addEventListener('click', () => {
+		modalWindow.classList.remove('show');
+	})
+});
+
+//////////////////////////////////////////////
 //                  監視                     //
 ///////////////////////////////////////////////
 
