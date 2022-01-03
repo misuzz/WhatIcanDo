@@ -25,16 +25,20 @@
 //////////////////////////////////////////////
 
 const modalWindowOpen = document.getElementById('modalWindowOpen');
-const modalWindow = document.getElementById('modalWindow');
+const modalWindowMask = document.getElementById('modalWindowMask');
+const modalWindowContents = document.getElementById('modalWindowContents');
 const closes = document.querySelectorAll('.close');
 
 modalWindowOpen.addEventListener('click', () => {
-	modalWindow.classList.add('show');
+	modalWindowMask.classList.remove('hidden');
+	modalWindowContents.classList.remove('hidden');
+
 })
 
 closes.forEach(close => {
 	close.addEventListener('click', () => {
-		modalWindow.classList.remove('show');
+		modalWindowMask.classList.add('hidden');
+		modalWindowContents.classList.add('hidden');
 	})
 });
 

@@ -4,6 +4,10 @@ body {
 	font-family: 'Shippori Mincho', serif;
 }
 
+a{
+	color: black;
+	text-decoration: none;
+}
 /*************************************/
 /*               header              */
 /*************************************/
@@ -45,9 +49,10 @@ body {
 	cursor: pointer;
 }
 
-#HeaderMenu ul li:hover {
+#HeaderMenu ul li:hover, #HeaderMenu a:hover {
 	color: #5ED5DD;
 }
+
 
 #sp-HeaderMenu {
 	display: none;
@@ -75,12 +80,7 @@ body {
 /***************************************/
 
 #modalWindow {
-	display: none;
 	z-index: 10;
-}
-
-#modalWindow.show {
-	display: block;
 }
 
 #modalWindowMask {
@@ -92,13 +92,11 @@ body {
 	left: 0;
 }
 
-#modalWindowContents {
-	transform: translateY(-500px);
-	opacity: 0;
-	transition: transform .3s, opacity .3s;
-
+#modalWindowMask.hidden {
+	display: none;
 }
-#modalWindow.show #modalWindowContents {
+
+#modalWindowContents {
 	position: absolute;
 	background-color: white;
 	border-radius: 10px;
@@ -110,6 +108,13 @@ body {
 	margin: 0 auto;
 	transform: none;
 	opacity: 1;
+	transition: transform .5s, opacity .5s;
+}
+
+#modalWindowContents.hidden {
+	transform: translateY(-500px);
+	opacity: 0;
+
 }
 
 #modalWindowContentsTitle {
@@ -147,7 +152,7 @@ body {
 	cursor: pointer;
 }
 
-#modalWindowContents >.material-icons:hover {
+#modalWindowContents>.material-icons:hover {
 	opacity: .5;
 }
 
@@ -475,11 +480,9 @@ body {
 }
 
 #footer a {
-	text-decoration: none;
 	line-height: 48px;
-	color: black;
 }
 
 #footer a:hover {
-	color: rgba(0, 0, 0, 0.5);
+	color: #5ED5DD;
 }

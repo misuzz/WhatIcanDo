@@ -19,11 +19,11 @@
 
 <body>
 	<div id="header">
-		<div id="HeaderLogo">WhatIcanDo</div>
+		<div id="HeaderLogo"><a href="index.html">WhatIcanDo</a></div>
 		<div id="HeaderMenu">
 			<ul>
 				<li id="modalWindowOpen">Modal-window</li>
-				<li>Accordion-menu</li>
+				<li><a href="accordion.html">Accordion-menu</a></li>
 				<li>Tab-menu</li>
 				<li>Contact</li>
 			</ul>
@@ -31,10 +31,9 @@
 		<div id="sp-HeaderMenu">
 			<span class="material-icons">menu</span>
 		</div>
-
 		<div id="modalWindow">
-			<div id="modalWindowMask" class="close"></div>
-			<div id="modalWindowContents">
+			<div id="modalWindowMask" class="close hidden"></div>
+			<div id="modalWindowContents" class="hidden">
 				<span class="material-icons close">close</span>
 				<div id="modalWindowContentsTitle">モーダルウィンドウ作れます</div>
 				<div id="modalWindowContentsDetail">
@@ -47,14 +46,13 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<div id="main">
 		<div id="mainTop">
 			<div id="ChangeBigImgs">
 				<img src='img/top1.jpg' id="BigImg" alt="topimg">
-				
+
 			</div>
 
 			<div id="mainTitle">
@@ -130,10 +128,15 @@
 
 	<div id="footer">
 		<div id="FooterAbout"><a href="#TopMessage">このサイトについて（内部リンク作れます）</a></div>
-	<div id="FooterContact"><a href='#'>お問い合わせ</a></div>
+		<div id="FooterContact"><a href='#'>お問い合わせ</a></div>
 	</div>
 
 </body>
-<script src="main.js"></script>
-
+<!-- <script src="jquery-3.6.0.min.js"></script>
+<script>
+	$(function () {
+		$('#header').load('header.html');
+	});
+</script> -->
+	<script src="main.js"></script>
 </html>
